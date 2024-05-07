@@ -15,9 +15,14 @@
 
 <script>
 function ageCheck() {
+  let adult;
   let age = document.getElementById("age").value;
-  let adult = (age < 18) ? "You're still young":"You're old enough";
-  document.getElementById("result").innerHTML = adult + ".";
+  if (isNaN(age)) {
+    adult = "Input is not a number.";
+  } else {
+    adult = (age < 18) ? "You're still young.":"You're old enough.";
+  }
+  document.getElementById("result").innerHTML = adult;
 }
 </script>
 
